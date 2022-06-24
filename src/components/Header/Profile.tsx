@@ -19,10 +19,10 @@ const Profile: FunctionComponent<ProfileProps> = () => {
         >
           Tadeu Tupinambá
         </Text>
-        <Text color="gray.300" fontSize={["small"]}>
+        <Text color="gray.300" fontSize={["small", "small", "medium"]}>
           Full stack Javascript Developer (Node.js, React, Database)
         </Text>
-        <Text color="gray.300" fontSize={["small"]}>
+        <Text color="gray.300" fontSize={["small", "small", "medium"]}>
           Specialist on Node.js Software engineer
         </Text>
       </Box>
