@@ -18,22 +18,22 @@ const SocialMedias: FunctionComponent<SocialMediasProps> = () => {
     >
       {isMediumBreakpoint && (
         <Box display={"flex"} mr="2">
-          <Icon as={RiPhoneLine} fontSize="17" color="white" mr="2" />
+          <Icon as={RiPhoneLine} fontSize="17" color="green.300" mr="2" />
           <Text fontSize={["small"]}>+55 (17) 996161451</Text>
         </Box>
       )}
       <Box display={"flex"} mr="2">
-        <Icon as={RiMailLine} fontSize="17" color="white" mr="2" />
+        <Icon as={RiMailLine} fontSize="17" color="green.300" mr="2" />
         <Text fontSize={["small"]}>tadeu.tupiz@gmail.com</Text>
       </Box>
       <Box display={"flex"} mr="2">
-        <Icon as={RiGithubFill} fontSize="17" color="white" mr="2" />
+        <Icon as={RiGithubFill} fontSize="17" color="green.300" mr="2" />
         <Text fontSize={["small"]}>tupizz</Text>
       </Box>
 
       {isMediumBreakpoint && (
         <Box display={"flex"}>
-          <Icon as={RiLink} fontSize="17" color="white" mr="2" />
+          <Icon as={RiLink} fontSize="17" color="green.300" mr="2" />
           <Text fontSize={["small"]}>www.tadeutupinamba.com</Text>
         </Box>
       )}

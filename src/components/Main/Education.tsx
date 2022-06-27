@@ -23,6 +23,9 @@ const Education: FunctionComponent<EducationProps> = () => {
             <ListIcon as={MdBook} color="green.500" />
             B.S. in Computer Science and Engineering
           </Text>
+          <Text fontWeight="bold" color="green.400">
+            2013 - 2017
+          </Text>
           <Text fontWeight="bold" color="gray.200">
             UNESP - São José do Rio Preto/SP
           </Text>
@@ -38,6 +41,9 @@ const Education: FunctionComponent<EducationProps> = () => {
           <Text>
             <ListIcon as={MdBook} color="green.500" />
             Technician, Electronics technician
+          </Text>
+          <Text fontWeight="bold" color="green.400">
+            2009 - 2011
           </Text>
           <Text fontWeight="bold" color="gray.200">
             CEFET - Araxá/MG

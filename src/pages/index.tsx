@@ -19,18 +19,23 @@ export default function Home() {
         <Grid
           w="100%"
           templateAreas={[
-            // mobile
+            // mobile screen
             `"header"
            "nav"
            "main"
            "footer"`,
-            //  medium up
+            // medium screen
+            `"header"
+           "nav"
+           "main"
+           "footer"`,
+            // large screen
             `"header header"
            "nav main"
            "footer footer"`,
           ]}
           // gridTemplateRows={"auto"}
-          gridTemplateColumns={["1fr", "300px 1fr"]}
+          gridTemplateColumns={["1fr", "1fr", "300px 1fr"]}
           gap="2"
         >
           <GridItem pl="2" area={"header"}>
