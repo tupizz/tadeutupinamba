@@ -5,14 +5,15 @@ interface ProfileProps {}
 
 const Profile: FunctionComponent<ProfileProps> = () => {
   return (
-    <Flex align="center" flexDirection={["column", "row"]}>
+    <Flex id="profile" align="center" flexDirection={["column", "row"]}>
       <Avatar
+        id="img"
         size={["lg", "xl", "2xl"]}
         name="Tadeu Tupinambá"
         src="https://github.com/tupizz.png"
       />
 
-      <Box ml="4" textAlign={["center", "left"]}>
+      <Box ml="4" id="box-info" textAlign={["center", "left"]}>
         <Text
           fontWeight="bold"
           fontSize={["large", "x-large", "xx-large", "xxx-large"]}

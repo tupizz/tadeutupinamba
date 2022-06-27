@@ -1,14 +1,22 @@
-import { Divider, Heading, Stack, Text } from "@chakra-ui/react";
+import {
+  Divider,
+  Heading,
+  Stack,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { FunctionComponent } from "react";
 
 interface SummaryProps {}
 
 const Summary: FunctionComponent<SummaryProps> = () => {
+  const color = useColorModeValue("gray.500", "gray.200");
+
   return (
     <Stack>
       <Heading>Summary</Heading>
       <Divider />
-      <Stack color={"gray.200"}>
+      <Stack color={color}>
         <Text>
           I am a Brazilian guy, passionate about solving problem using
           technology, working as Software Engineer at Demand.io (Los Angeles/CA

@@ -1,6 +1,9 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, ThemeConfig } from "@chakra-ui/react";
+import { StyleFunctionProps } from "@chakra-ui/theme-tools";
 
 export default extendTheme({
+  useSystemColorMode: false,
+  initialColorMode: "dark",
   colors: {
     gray: {
       "900": "#181B23",
@@ -20,11 +23,11 @@ export default extendTheme({
     body: "Roboto",
   },
   styles: {
-    global: {
+    global: ({ colorMode }: StyleFunctionProps) => ({
       body: {
-        bg: "gray.900",
-        color: "gray.50",
+        bg: colorMode === "dark" ? "gray.900" : "white",
+        color: colorMode === "dark" ? "gray.50" : "gray.900",
       },
-    },
+    }),
   },
-});
+} as ThemeConfig);

@@ -6,6 +6,7 @@ import {
   ListItem,
   Stack,
   Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { FunctionComponent } from "react";
 import { MdBook } from "react-icons/md";
@@ -13,6 +14,9 @@ import { MdBook } from "react-icons/md";
 interface EducationProps {}
 
 const Education: FunctionComponent<EducationProps> = () => {
+  const color = useColorModeValue("gray.500", "gray.200");
+  const lightColor = useColorModeValue("gray.400", "gray.100");
+
   return (
     <Stack>
       <Heading>Education</Heading>
@@ -26,10 +30,10 @@ const Education: FunctionComponent<EducationProps> = () => {
           <Text fontWeight="bold" color="green.400">
             2013 - 2017
           </Text>
-          <Text fontWeight="bold" color="gray.200">
+          <Text fontWeight="bold" color={lightColor}>
             UNESP - São José do Rio Preto/SP
           </Text>
-          <Text color="gray.300">
+          <Text color={color}>
             Scientific research around enviromental problems using Digital Image
             Processing and distributed processing technologies like Hadoop and
             Hadoop Image Processing Interface on a cluster of machines deployed
@@ -45,10 +49,10 @@ const Education: FunctionComponent<EducationProps> = () => {
           <Text fontWeight="bold" color="green.400">
             2009 - 2011
           </Text>
-          <Text fontWeight="bold" color="gray.200">
+          <Text fontWeight="bold" color={lightColor}>
             CEFET - Araxá/MG
           </Text>
-          <Text color="gray.300">
+          <Text color={color}>
             Programming Language C/Assembly, programming and definition of
             microprocessor and microcontrollers
           </Text>

@@ -7,6 +7,7 @@ import {
   ListItem,
   Stack,
   Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { FunctionComponent } from "react";
 import { MdArrowRight, MdComputer } from "react-icons/md";
@@ -14,6 +15,9 @@ import { MdArrowRight, MdComputer } from "react-icons/md";
 interface ExperiencesProps {}
 
 const Experiences: FunctionComponent<ExperiencesProps> = () => {
+  const color = useColorModeValue("gray.500", "gray.200");
+  const lightColor = useColorModeValue("gray.400", "gray.100");
+
   return (
     <Stack>
       <Heading>Experiences</Heading>
@@ -27,10 +31,10 @@ const Experiences: FunctionComponent<ExperiencesProps> = () => {
           <Text fontWeight="bold" color="green.400">
             December 2021 - Present
           </Text>
-          <Text fontWeight="bold" color="gray.200">
+          <Text fontWeight="bold" color={lightColor}>
             Demand.io (Los Angeles, California)
           </Text>
-          <Box color="gray.300">
+          <Box color={color}>
             <List spacing={1}>
               <ListItem>
                 <ListIcon as={MdArrowRight} color="gray.500" />I have relied on
@@ -77,10 +81,10 @@ const Experiences: FunctionComponent<ExperiencesProps> = () => {
           <Text fontWeight="bold" color="green.400">
             January 2021 - December 2021
           </Text>
-          <Text fontWeight="bold" color="gray.200">
+          <Text fontWeight="bold" color={lightColor}>
             Insider, Inc. (New York)
           </Text>
-          <Box color="gray.300">
+          <Box color={color}>
             <List spacing={1}>
               <ListItem>
                 <ListIcon as={MdArrowRight} color="gray.500" />I worked on a big
@@ -148,10 +152,10 @@ const Experiences: FunctionComponent<ExperiencesProps> = () => {
           <Text fontWeight="bold" color="green.400">
             July 2020 - December 2020
           </Text>
-          <Text fontWeight="bold" color="gray.200">
+          <Text fontWeight="bold" color={lightColor}>
             Kovi (São Paulo, Brazil)
           </Text>
-          <Box color="gray.300">
+          <Box color={color}>
             <List spacing={1}>
               <ListItem>
                 <ListIcon as={MdArrowRight} color="gray.500" />I worked on a big
@@ -201,10 +205,10 @@ const Experiences: FunctionComponent<ExperiencesProps> = () => {
           <Text fontWeight="bold" color="green.400">
             July 2019 - June 2020
           </Text>
-          <Text fontWeight="bold" color="gray.200">
+          <Text fontWeight="bold" color={lightColor}>
             BV Bank (São Paulo, Brazil)
           </Text>
-          <Box color="gray.300">
+          <Box color={color}>
             <List spacing={1}>
               <ListItem>
                 <ListIcon as={MdArrowRight} color="gray.500" />
@@ -245,10 +249,10 @@ const Experiences: FunctionComponent<ExperiencesProps> = () => {
           <Text fontWeight="bold" color="green.400">
             October 2018 - June 2019
           </Text>
-          <Text fontWeight="bold" color="gray.200">
+          <Text fontWeight="bold" color={lightColor}>
             Field Control (São José do Rio Preto, Brazil)
           </Text>
-          <Box color="gray.300">
+          <Box color={color}>
             <List spacing={1}>
               <ListItem>
                 <ListIcon as={MdArrowRight} color="gray.500" />
@@ -299,7 +303,7 @@ const Experiences: FunctionComponent<ExperiencesProps> = () => {
           <Text fontWeight="bold" color="gray.200">
             DXC (São José do Rio Preto, Brazil)
           </Text>
-          <Box color="gray.300">
+          <Box color={color}>
             <List spacing={1}>
               <ListItem>
                 <ListIcon as={MdArrowRight} color="gray.500" />
@@ -322,7 +326,7 @@ const Experiences: FunctionComponent<ExperiencesProps> = () => {
           <Text fontWeight="bold" color="gray.200">
             UNESP - GBD (São José do Rio Preto, Brazil)
           </Text>
-          <Box color="gray.300">
+          <Box color={color}>
             <List spacing={1}>
               <ListItem>
                 <ListIcon as={MdArrowRight} color="gray.500" />

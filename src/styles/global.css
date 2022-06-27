@@ -1,0 +1,41 @@
+@media print {
+  .hide-on-print {
+    display: none !important;
+  }
+
+  @page {
+    size: 330mm 427mm;
+    margin: 14mm;
+  }
+
+  #header-profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #profile {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  #profile #img {
+    width: 150px;
+  }
+
+  #social-media-box {
+    flex-direction: column;
+    text-align: right;
+  }
+
+  #box-info {
+    text-align: left;
+  }
+
+  .printBody {
+    width: 1170px;
+    color: black ;
+    --chakra-colors-gray-200: #616161;
+    --chakra-colors-gray-100: #616161;
+  }
+}
