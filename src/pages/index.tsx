@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import Header from "../components/Header";
 import Main from "../components/Main";
+import Nav from "../components/Nav";
 
 export default function Home() {
   return (
@@ -43,13 +44,13 @@ export default function Home() {
             <Divider py="2" />
           </GridItem>
           <GridItem pl="2" area={"nav"}>
-            Nav
+            <Nav />
           </GridItem>
           <GridItem pl="2" area={"main"}>
             <Main />
           </GridItem>
           <GridItem pl="2" area={"footer"}>
-            Footer
+            {/* Footer */}
           </GridItem>
         </Grid>
       </Flex>
