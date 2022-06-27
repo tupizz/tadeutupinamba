@@ -35,7 +35,7 @@ export default function Home() {
            "footer footer"`,
           ]}
           // gridTemplateRows={"auto"}
-          gridTemplateColumns={["1fr", "1fr", "300px 1fr"]}
+          gridTemplateColumns={["1fr", "1fr", "200px 1fr", "300px 1fr"]}
           gap="2"
         >
           <GridItem pl="2" area={"header"}>
