@@ -10,6 +10,7 @@ import {
   theme,
 } from "@chakra-ui/react";
 import Header from "../components/Header";
+import Main from "../components/Main";
 
 export default function Home() {
   return (
@@ -29,20 +30,20 @@ export default function Home() {
            "footer footer"`,
           ]}
           // gridTemplateRows={"auto"}
-          gridTemplateColumns={["1fr", "200px 1fr"]}
+          gridTemplateColumns={["1fr", "300px 1fr"]}
           gap="2"
         >
           <GridItem pl="2" area={"header"}>
             <Header />
             <Divider py="2" />
           </GridItem>
-          <GridItem pl="2" bg="pink.300" area={"nav"}>
+          <GridItem pl="2" area={"nav"}>
             Nav
           </GridItem>
-          <GridItem pl="2" bg="green.300" area={"main"}>
-            Main
+          <GridItem pl="2" area={"main"}>
+            <Main />
           </GridItem>
-          <GridItem pl="2" bg="blue.300" area={"footer"}>
+          <GridItem pl="2" area={"footer"}>
             Footer
           </GridItem>
         </Grid>
