@@ -12,6 +12,7 @@ const Main: FunctionComponent<MainProps> = () => {
       <Summary />
       <Education />
       <Experiences />
+      <div style={{ height: "50px" }} />
     </Stack>
   );
 };

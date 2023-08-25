@@ -23,13 +23,81 @@ const Experiences: FunctionComponent<ExperiencesProps> = () => {
       <Heading>Experiences</Heading>
       <Divider />
       <List spacing={3}>
+      <ListItem>
+          <Text fontWeight="bold">
+            <ListIcon as={MdComputer} color="green.400" />
+            Senior Software Engineer (Full-stack Node.js/React/Golang)
+          </Text>
+          <Text fontWeight="bold" color="green.400">
+            December 2022 - nowadays
+          </Text>
+          <Text fontWeight="bold" color={lightColor}>
+            Pray.com (Los Angeles, California)
+          </Text>
+          <Box color={color}>
+            <List spacing={1}>
+              <ListItem>
+                <ListIcon as={MdArrowRight} color="gray.500" />
+                At Pray.com, as a Software Engineer, I contributed to the development and enhancement of the world's #1 app for faith and prayer. In this role, I collaborated with a team to drive the technological vision, ensuring the platform effectively catered to the needs of its global user base, fostering faith and building a tight-knit community.
+              </ListItem>
+            </List>
+          </Box>
+        </ListItem>
+
+
+        <ListItem>
+          <Text fontWeight="bold">
+            <ListIcon as={MdComputer} color="green.400" />
+            Senior Software Engineer (Full-stack Node.js/React/Golang)
+          </Text>
+          <Text fontWeight="bold" color="green.400">
+            April 2022 - December 2022
+          </Text>
+          <Text fontWeight="bold" color={lightColor}>
+            Nok (Los Angeles, California)
+          </Text>
+          <Box color={color}>
+            <List spacing={1}>
+              <ListItem>
+                <ListIcon as={MdArrowRight} color="gray.500" />
+                Created and supported new features on the e-commerce part,
+                including (payment, shipping, returns, keep orders, and tryout
+                orders). Working as a full stack software engineer I was able to
+                successfully build new features like the multiple order items
+                tryout and keep, including the revamp on the data-side part, and
+                also on the payment processor.
+              </ListItem>
+              <ListItem>
+                <ListIcon as={MdArrowRight} color="gray.500" />
+                Proposed scalable solutions to solve data problems related to
+                specific tech debts we had, applying solutions like Cache and
+                Elasticsearch on top of our dynamo databases. Also with the sync
+                mechanism to keep all the index from Elasticsearch up to date
+                with our database schemas.
+              </ListItem>
+              <ListItem>
+                <ListIcon as={MdArrowRight} color="gray.500" />
+                Created and optimized the migration process to update records
+                every time we had new properties (columns, tables, indexes) on
+                the database level.
+              </ListItem>
+              <ListItem>
+                <ListIcon as={MdArrowRight} color="gray.500" />
+                Worked on technologies like: Node.js, Javascript, Typescript,
+                React, Dynamo, Elasticsearch, AWS Cognito, AWS Amplify with
+                App-sync and AWS Lamdas
+              </ListItem>
+            </List>
+          </Box>
+        </ListItem>
+
         <ListItem>
           <Text fontWeight="bold">
             <ListIcon as={MdComputer} color="green.400" />
             Senior Software Engineer (Full-stack Node.js/Vue.js)
           </Text>
           <Text fontWeight="bold" color="green.400">
-            December 2021 - Present
+            December 2021 - April 2022
           </Text>
           <Text fontWeight="bold" color={lightColor}>
             Demand.io (Los Angeles, California)

@@ -17,27 +17,25 @@ const Summary: FunctionComponent<SummaryProps> = () => {
       <Heading>Summary</Heading>
       <Divider />
       <Stack color={color}>
-        <Text>
-          I am a Brazilian guy, passionate about solving problem using
-          technology, working as Software Engineer at Demand.io (Los Angeles/CA
-          - USA).
+        <Text mt={2}>
+          Based in São Paulo, Brasil, I am a seasoned software engineer with
+          over eight years of experience spanning the Americas. I've honed my
+          skills at companies like Pray.com, Nok, and Insider Inc., where I've
+          delivered complex web systems, APIs, mobile applications, and web
+          applications, always adhering to software programming best practices
+          and industry standards.
         </Text>
         <Text>
-          For more than eight years of working with software development, I have
-          pursued and successfully build Web Systems, APIs, mobile applications,
-          and web applications following software programming best practices,
-          design patterns, and industry standards. I’m really into agile
-          methodologies and believe that we need to build and deliver
-          incrementally. I feel very comfortable and motivated to lead and help
-          software development teams to deliver great products.
-        </Text>
-        <Text>
-          Also already designed and worked in app and webapps projects using
-          technologies like Javascript, Flutter, Node.js, Golang, Python, Java,
-          spring MVC, spring boot, angular, ionic, react, redux, Next.js and
-          python for machine learning and data analysis projects. I see all of
-          these technologies as a group of tools that can best suits me on some
-          problem solving.
+          My work often centers on designing and building from scratch top-notch
+          systems written in JavaScript, Node.js, Golang and MySQL, with a
+          strong foundation in diverse technologies like Elasticsearch, AWS
+          services, and various front-end frameworks. Fluent in both Portuguese
+          and English, I am adept at remote collaboration and thrive in agile
+          environments. I also have a passion for continuous learning, as
+          evident from my ongoing MBA in Data Analytics & Artificial
+          Intelligence and my extensive certifications in backend software
+          development and Front-end Engineering. I pride myself on my ability to
+          lead software development teams, ensuring timely and quality delivery.
         </Text>
       </Stack>
     </Stack>
