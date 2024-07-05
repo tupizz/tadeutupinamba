@@ -51,7 +51,7 @@ const SocialMedias: FunctionComponent<SocialMediasProps> = () => {
         <Box display={"flex"}>
           <Icon as={RiLink} fontSize="17" color="green.400" mr="2" />
           <Text fontSize={["small"]} color={color}>
-            www.tadeutupinamba.com
+            www.tadeutupinamba.com.br
           </Text>
         </Box>
       )}

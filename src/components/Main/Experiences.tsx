@@ -23,7 +23,7 @@ const Experiences: FunctionComponent<ExperiencesProps> = () => {
       <Heading>Experiences</Heading>
       <Divider />
       <List spacing={3}>
-      <ListItem>
+        <ListItem>
           <Text fontWeight="bold">
             <ListIcon as={MdComputer} color="green.400" />
             Senior Software Engineer (Full-stack Node.js/React/Golang)
@@ -38,12 +38,69 @@ const Experiences: FunctionComponent<ExperiencesProps> = () => {
             <List spacing={1}>
               <ListItem>
                 <ListIcon as={MdArrowRight} color="gray.500" />
-                At Pray.com, as a Software Engineer, I contributed to the development and enhancement of the world's #1 app for faith and prayer. In this role, I collaborated with a team to drive the technological vision, ensuring the platform effectively catered to the needs of its global user base, fostering faith and building a tight-knit community.
+                At Pray.com, as a Software Engineer, I contributed to the
+                development and enhancement of the world's #1 app for faith and
+                prayer. In this role, I collaborated with a team to drive the
+                technological vision, ensuring the platform effectively catered
+                to the needs of its global user base, fostering faith and
+                building a tight-knit community.
+              </ListItem>
+              <ListItem>
+                <ListIcon as={MdArrowRight} color="gray.500" />
+                Launched a groundbreaking translation and voice synthesis
+                platform, significantly expanding our service offerings into new
+                languages such as Portuguese, Italian, and Japanese.
+              </ListItem>
+              <ListItem>
+                <ListIcon as={MdArrowRight} color="gray.500" />
+                Developed a pioneering AI pipeline that autonomously generates
+                daily devotionals from RSS feeds, incorporating cutting-edge,
+                cost-effective technologies and user-centric design.
+              </ListItem>
+              <ListItem>
+                <ListIcon as={MdArrowRight} color="gray.500" />
+                Spearheaded a major database migration initiative, enhancing
+                schema and system performance without disrupting service
+                continuity.
+              </ListItem>
+              <ListItem>
+                <ListIcon as={MdArrowRight} color="gray.500" />
+                Consistently recognized for leading team efforts that boost
+                productivity and product quality, reflecting my commitment to
+                excellence in software development.
+              </ListItem>
+              <ListItem>
+                <ListIcon as={MdArrowRight} color="gray.500" />
+                Successfully led the integration of the Zype CMS, enhancing our
+                video content management capabilities and improving stakeholder
+                experiences.
+              </ListItem>
+              <ListItem>
+                <ListIcon as={MdArrowRight} color="gray.500" />
+                Implemented crucial optimizations reducing query response times
+                from over two minutes to under one second, drastically improving
+                operational efficiency.
+              </ListItem>
+              <ListItem>
+                <ListIcon as={MdArrowRight} color="gray.500" />
+                Innovated caching strategies and integrated comprehensive
+                monitoring with DataDog, enhancing system reliability and
+                performance.
+              </ListItem>
+              <ListItem>
+                <ListIcon as={MdArrowRight} color="gray.500" />
+                Created an Ephemeral/QA environment that reduced our feature
+                delivery cycles and streamlined DevOps processes.
+              </ListItem>
+              <ListItem>
+                <ListIcon as={MdArrowRight} color="gray.500" />
+                Worked with technologies like Node.js, JavaScript, TypeScript,
+                React, DynamoDB, Langchain, Golang, Serverless framework, AWS
+                Lambda.
               </ListItem>
             </List>
           </Box>
         </ListItem>
-
 
         <ListItem>
           <Text fontWeight="bold">

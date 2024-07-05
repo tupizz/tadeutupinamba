@@ -28,7 +28,7 @@ const Education: FunctionComponent<EducationProps> = () => {
             Data Analytics & Artificial Intelligence
           </Text>
           <Text fontWeight="bold" color="green.400">
-            2023 - current
+            2023 - 2025
           </Text>
           <Text fontWeight="bold" color={lightColor}>
             FIAP - Master of Business Administration - MBA
@@ -73,7 +73,7 @@ const Education: FunctionComponent<EducationProps> = () => {
             MBA in Software Design and Architecture
           </Text>
           <Text fontWeight="bold" color="green.400">
-            2013 - 2017
+            2023 - 2024
           </Text>
           <Text fontWeight="bold" color={lightColor}>
             Full Cycle - Master of Business Administration - MBA
