@@ -3,496 +3,276 @@ import {
   Divider,
   Heading,
   List,
-  ListIcon,
   ListItem,
   Stack,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import dynamic from "next/dynamic";
 import { FunctionComponent } from "react";
-import { MdArrowRight, MdComputer } from "react-icons/md";
 
 interface ExperiencesProps {}
 
-const Experiences: FunctionComponent<ExperiencesProps> = () => {
-  const color = useColorModeValue("gray.500", "gray.200");
-  const lightColor = useColorModeValue("gray.400", "gray.100");
+// Using experience items as data
+const experienceItems = [
+  {
+    id: "primer",
+    title: "Staff Software Engineer",
+    period: "January 2025 - present",
+    company: "Primer (San Francisco, United States)",
+    about:
+      "Primer is a B2B audience intelligence platform that eliminates wasted ad spend by enabling marketers to precisely target ideal customers across all major advertising channels. The platform integrates first-party customer data with premium third-party business intelligence to create hyper-targeted audience segments that sync seamlessly with LinkedIn, Google, Meta, and other major ad platforms.",
+    achievements: [
+      "Advanced Data Engineering: Engineered and maintained the core data pipeline that processes and integrates large-scale datasets from multiple third-party providers into ClickHouse, ensuring data integrity and freshness that powers precise audience targeting.",
+      "Cross-Platform Audience Delivery: Developed robust API integrations that seamlessly synchronize custom audience segments across Google Ads, Meta Ads, and LinkedIn Ads, enabling omnichannel targeting of high-value prospects.",
+      "Performance Optimization: Redesigned the connection integration framework, achieving a 70% efficiency improvement that dramatically reduced latency and enhanced real-time audience delivery across all advertising platforms.",
+      "Operational Intelligence System: Architected and deployed an internal monitoring portal visualizing live events and queue statuses across microservices, increasing system transparency, accelerating issue resolution, and strengthening cross-functional collaboration throughout the organization.",
+    ],
+  },
+  {
+    id: "pray",
+    title: "Staff Software Engineer",
+    period: "December 2022 - January 2025",
+    company: "Pray.com (Los Angeles, United States)",
+    about:
+      "Pray.com is the world's #1 app for faith and prayer, bringing spiritual content to users' fingertips through daily prayer plans, inspirational audio content, and a private social network. The platform delivers religious content and technical services to a global audience through a mobile application that seamlessly integrates personalized faith-based experiences.",
+    achievements: [
+      "Multilingual Platform Expansion: Launched an innovative translation and voice synthesis platform that significantly expanded service offerings into multiple new languages including Portuguese, Italian, and Japanese, increasing global accessibility and user engagement.",
+      "AI Content Generation Pipeline: Developed a pioneering AI system that autonomously generates daily devotionals from RSS feeds, implementing cutting-edge technologies with cost-effective architecture and user-centric design principles.",
+      "Database Architecture Transformation: Spearheaded a comprehensive database migration initiative that enhanced schema structure and dramatically improved system performance while maintaining uninterrupted service continuity.",
+      "Video Content Management Enhancement: Led the successful integration of Zype CMS, significantly upgrading video content management capabilities and creating a more streamlined experience for both internal stakeholders and end users.",
+      "Performance Optimization: Implemented critical system optimizations that reduced query response times from over two minutes to under one second, dramatically improving user experience and operational efficiency.",
+      "DevOps Infrastructure Innovation: Created an Ephemeral/QA environment that accelerated feature delivery cycles and streamlined development processes, while implementing advanced caching strategies and comprehensive DataDog monitoring to enhance system reliability.",
+    ],
+  },
+  {
+    id: "nok",
+    title: "Senior Software Engineer",
+    period: "March 2022 - December 2022",
+    company: "Nok (Los Angeles, United States)",
+    about:
+      "Nok is a comprehensive reverse logistics platform that unifies and streamlines returns management for brands. The company integrates into existing processes to simplify returns handling, maintain brand integrity, generate new revenue streams through optimized resale strategies, and provide unprecedented data visibility across the entire product lifecycle.",
+    achievements: [
+      "E-commerce Feature Development: Designed and implemented critical e-commerce functionality including payment processing, shipping logistics, returns management, and innovative order handling features like multiple order items tryout and keep, working across the full technology stack to deliver seamless customer experiences.",
+      "Data Architecture Optimization: Proposed and implemented scalable solutions to address technical debt, integrating caching mechanisms and Elasticsearch on top of DynamoDB databases, significantly improving performance and data access while maintaining system integrity.",
+      "Synchronization System Engineering: Developed a robust synchronization mechanism to ensure real-time consistency between Elasticsearch indexes and primary database schemas, enabling reliable search functionality and accurate data representation across platforms.",
+      "Database Migration Framework: Created and optimized an efficient migration process to seamlessly update records whenever new properties were introduced at the database level, minimizing downtime and ensuring data consistency during schema evolutions.",
+      "Full-Stack Technical Expertise: Leveraged diverse technology stack including Node.js, JavaScript, TypeScript, React, DynamoDB, Elasticsearch, AWS Cognito, AWS Amplify with AppSync, and AWS Lambda to build and maintain scalable, high-performance applications supporting the company's reverse logistics operations.",
+    ],
+  },
+  {
+    id: "demand",
+    title: "Senior Software Engineer",
+    period: "December 2021 - April 2022",
+    company: "Demand.io (Los Angeles, United States)",
+    about:
+      "Demand.io is an AI-powered e-commerce accelerator that connects consumers with products they'll love. The company maintains a comprehensive product database and delivers personalized shopping experiences through AI-driven apps and interfaces, pioneering the transition from traditional screen-based shopping to conversational commerce.",
+    achievements: [
+      "Massive Data Pipeline Engineering: Architected and implemented a sophisticated ETL pipeline leveraging network affiliatizers to import, process, and load over 20 million product records into the company infrastructure, utilizing Node.js, MongoDB with Mongoose, Nest.js, and Bull + Redis for efficient queue management.",
+      "AI-Powered Product Clustering System: Developed an innovative text clustering strategy that intelligently groups similar products, enabling price optimization and enhancing user experience by presenting comparable product models throughout the customer journey across multiple platforms.",
+      "Microservices Architecture Development: Built robust Nest.js microservices that facilitated seamless communication between internal services and exposed optimized coupon and product data to front-end applications, creating a cohesive ecosystem across the platform.",
+      "Cloud Infrastructure Collaboration: Worked closely with infrastructure teams on Kubernetes-based systems deployed on Google Cloud Platform, ensuring scalability, reliability, and performance optimization for all services.",
+      "Full-Stack Technical Implementation: Leveraged diverse technology stack including Node.js, JavaScript, TypeScript, Nest.js, Fastify, MySQL, Docker, Kubernetes, Sentry.io, Elasticsearch, and containerization technologies to deliver high-performance, scalable solutions supporting the company's AI-driven commerce platform.",
+    ],
+  },
+  {
+    id: "insider",
+    title: "Senior Software Engineer",
+    period: "July 2020 - December 2021",
+    company: "Insider, Inc. (New York, United States)",
+    about:
+      "Business Insider is a leading multinational financial and business news website headquartered in New York City. The platform delivers original reporting and aggregated content to millions of readers through multiple international editions, combining traditional journalism with modern digital publishing strategies.",
+    achievements: [
+      "Revenue Attribution System: Designed and implemented a comprehensive page-level revenue attribution (PRA) system that processed over 1 million stories/posts, providing data-driven insights on content performance and revenue generation, built using Node.js, Elasticsearch, Redis, and MongoDB with Nest.js and Bull frameworks.",
+      "Reader Experience Optimization: Contributed to the Helpfulness team to significantly enhance performance and user experience for millions of readers, implementing technical improvements that increased engagement and satisfaction across the platform.",
+      "Internal Tools Development: Created and maintained essential internal applications and services using a diverse tech stack including TypeScript, Node.js, Angular, and Go, enabling more efficient content management and business operations.",
+      "Platform Modernization: Successfully migrated an existing product platform to Vue.js technologies, improving maintainability, performance, and developer experience while ensuring seamless transition for end users.",
+      "DevOps Implementation: Built fully automated CI/CD pipelines with GitHub Actions and implemented containerized applications using Docker, streamlining deployment processes and increasing development efficiency.",
+      "API Architecture: Developed multiple high-performance APIs and applications in Node.js that supported critical business functions, enhancing content delivery capabilities and internal data accessibility.",
+      "SEO Enhancement: Implemented technical SEO optimizations that improved content discoverability and search engine rankings, contributing to increased organic traffic and broader audience reach.",
+    ],
+  },
+  {
+    id: "bv",
+    title: "Software Engineer",
+    period: "June 2019 - July 2020",
+    company: "BV Bank (São Paulo, Brazil)",
+    about:
+      "Banco BV is a major Brazilian financial institution known for its significant market presence in vehicle financing, where it positioned itself as the second-largest player with 22% market share in 2011. The bank offers a wide range of financial products and services to individuals and businesses across Brazil.",
+    achievements: [
+      "Innovation Lab Development: Contributed to Banco BV's Innovation Lab (BV Lab), designing and implementing projects that successfully automated processes and routine integrations with the bank's strategic partners, enhancing operational efficiency and service delivery.",
+      "Internet Banking Transformation: Played a key role in improving the user experience of the bank's Internet Banking platform and assisted in the critical process of migrating legacy systems to modern technology stacks, ensuring seamless transition and enhanced customer satisfaction.",
+      "Blockchain Innovation: Participated in a prestigious blockchain project under LIFT (Technological Financial Innovations Laboratory of Brazil Central Bank), where I helped design and develop a P2P lending application using Hyperledger Fabric technology, which was showcased in the LIFT 2019 edition and recognized by Brazil's Central Bank.",
+      "Augmented Reality Implementation: Leveraged AR.js and Unity with Vuforia to create augmented reality projects that provided innovative customer experiences and differentiated banking services in the competitive financial technology landscape.",
+      "Cross-Platform Development: Built and maintained diverse applications using multiple technologies including Java with Spring Boot for APIs, Node.js for backend services, Angular and React for web applications, and Flutter for mobile applications, demonstrating versatility across the full technology stack.",
+    ],
+  },
+  {
+    id: "field",
+    title: "Software Engineer",
+    period: "January 2018 - June 2019",
+    company: "Field Control (São José do Rio Preto, Brazil)",
+    about:
+      "Field Control is a leading field service management software company that transforms how businesses manage external service teams. The platform optimizes maintenance and installation services, improving productivity and service quality for over 2,000 companies and 40,000 technicians across Brazil daily.",
+    achievements: [
+      "Product Module Development: Created and implemented new product modules for the Field Control platform, expanding functionality and enhancing the core service management capabilities for thousands of business users and field technicians.",
+      "Banking Integration Engineering: Successfully developed and deployed an integration with Bradesco, one of Brazil's largest and most respected banking institutions, enabling seamless financial transactions and improving operational workflows for service businesses.",
+      "Database Optimization: Engineered and implemented migration, synchronization, and cleanup scripts using Node.js, significantly improving database performance and data integrity across the platform.",
+      "API Architecture: Led development and maintenance of RESTful APIs in Node.js following JavaScript design patterns, creating robust backend services that power the platform's core functionality.",
+      "Cross-Platform Application Development: Built responsive applications using multiple front-end technologies including Ionic, Angular 2+, AngularJS, and React, ensuring consistent user experiences across different devices and interfaces.",
+      "Serverless Implementation: Leveraged AWS Lambda for API exposure, optimizing resource utilization and improving scalability while reducing operational overhead.",
+      "Authentication Security: Implemented Amazon Cognito for user authentication across multiple projects, enhancing security protocols and streamlining user management within the platform.",
+    ],
+  },
+  {
+    id: "cnpq",
+    title: "Graduate Research Intern",
+    period: "June 2016 - January 2018",
+    company: "CNPq (São José do Rio Preto, Brazil)",
+    about:
+      "The National Council for Scientific and Technological Development (CNPq) is a prestigious Brazilian government entity connected to the Ministry of Science, Technology and Innovation. Established to foster scientific research and technological advancement in Brazil, CNPq provides critical funding and support for research initiatives across numerous scientific disciplines.",
+    achievements: [
+      "Environmental Research Innovation: Conducted advanced scientific research focused on environmental challenges using sophisticated Digital Image Processing techniques and distributed computing technologies.",
+      'Big Data Framework Architecture: Designed and developed a specialized framework architecture that significantly enhanced the review and analysis processes for environmental remote sensing images, addressing the "rich data, poor information" paradox in the field.',
+      "Distributed Processing Implementation: Leveraged Hadoop and Hadoop Image Processing Interface to create efficient methods for processing massive image datasets, enabling more effective extraction of critical environmental information from remote sensing data.",
+      "Environmental Monitoring Solutions: Created technical solutions for monitoring vital natural resources including water bodies, mineral deposits, and green areas through advanced image processing algorithms.",
+      "Research Infrastructure Development: Established programming classes and methods specifically optimized for the distributed processing of large-scale image datasets, contributing to the technological capabilities of Brazil's scientific research community.",
+    ],
+  },
+  {
+    id: "unesp",
+    title: "Software Engineer",
+    period: "January 2014 - December 2017",
+    company: "UNESP - GBD (São José do Rio Preto, Brazil)",
+    about:
+      "GBD – Grupo de Banco de Dados is a research group founded in 1989. GBD specializes in database modeling and management technologies for both conventional and non-conventional data, covering systems such as DBMS, GIS, hypermedia applications, data integration, warehousing, cleaning, and mining.",
+    achievements: [
+      "Engineered web applications for health and education domains using Java with Spring MVC 4.x and JPA/Hibernate, delivering dynamic, data-driven user interfaces.",
+      "Designed and optimized PostgreSQL database schemas and complex SQL queries to support efficient storage, retrieval, and visualization of research datasets.",
+      "Integrated HTML5, CSS3, JavaScript and public JS visualization libraries to create interactive dashboards and reports for academic users.",
+      "Developed large-scale image-processing pipelines with the Hadoop Image Processing Interface (HIPI), enabling high-throughput analysis of extensive biomedical and educational image datasets.",
+      "Deployed and managed Hadoop clusters on Amazon Web Services, ensuring scalable, reliable infrastructure for big-data workflows and batch processing.",
+    ],
+  },
+];
+
+const ExperienceItem: FunctionComponent<{
+  title: string;
+  period: string;
+  company: string;
+  achievements: string[];
+  about?: string;
+}> = ({ title, period, company, achievements, about }) => {
+  const color = useColorModeValue("gray.600", "gray.300");
+  const lightColor = useColorModeValue("gray.500", "gray.400");
+  const aboutBgColor = useColorModeValue("gray.50", "gray.800");
+  const borderColor = useColorModeValue("gray.200", "gray.700");
 
   return (
-    <Stack>
-      <Heading>Experiences</Heading>
+    <ListItem mb={10} position="relative">
+      {/* Timeline dot and line */}
+      <Box
+        position="absolute"
+        left="-10px"
+        top="8px"
+        width="10px"
+        height="10px"
+        borderRadius="full"
+        bg="green.400"
+        zIndex={1}
+      />
+      <Box
+        position="absolute"
+        left="-5px"
+        top="18px"
+        bottom="-20px"
+        width="1px"
+        bg={borderColor}
+        zIndex={0}
+      />
+
+      {/* Content */}
+      <Box pl={6}>
+        <Heading as="h3" size="md" fontWeight="600">
+          {title}
+        </Heading>
+
+        <Text color="green.500" fontSize="sm" mt={1} mb={1} fontWeight="500">
+          {period}
+        </Text>
+
+        <Text color={lightColor} fontSize="sm" mb={3}>
+          {company}
+        </Text>
+
+        {about && (
+          <Text
+            fontSize="sm"
+            color={color}
+            mb={4}
+            lineHeight="taller"
+            borderLeft="2px solid"
+            borderColor="green.200"
+            pl={3}
+            py={1}
+          >
+            {about}
+          </Text>
+        )}
+
+        <Box mt={4}>
+          <List spacing={2}>
+            {achievements.map((achievement, idx) => (
+              <ListItem
+                key={idx}
+                display="flex"
+                fontSize="sm"
+                color={color}
+                lineHeight="tall"
+              >
+                <Text as="span" color="green.400" mr={2} fontSize="sm">
+                  •
+                </Text>
+                <Text>{achievement}</Text>
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+      </Box>
+    </ListItem>
+  );
+};
+
+ExperienceItem.displayName = "ExperienceItem";
+
+const ExperiencesComponent: FunctionComponent<ExperiencesProps> = () => {
+  return (
+    <Stack spacing={8}>
+      <Heading as="h2" size="lg" letterSpacing="tight">
+        Experiences
+      </Heading>
       <Divider />
-      <List spacing={3}>
-        <ListItem>
-          <Text fontWeight="bold">
-            <ListIcon as={MdComputer} color="green.400" />
-            Senior Software Engineer (Full-stack Node.js/React/Golang)
-          </Text>
-          <Text fontWeight="bold" color="green.400">
-            December 2022 - nowadays
-          </Text>
-          <Text fontWeight="bold" color={lightColor}>
-            Pray.com (Los Angeles, California)
-          </Text>
-          <Box color={color}>
-            <List spacing={1}>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                At Pray.com, as a Software Engineer, I contributed to the
-                development and enhancement of the world's #1 app for faith and
-                prayer. In this role, I collaborated with a team to drive the
-                technological vision, ensuring the platform effectively catered
-                to the needs of its global user base, fostering faith and
-                building a tight-knit community.
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Launched a groundbreaking translation and voice synthesis
-                platform, significantly expanding our service offerings into new
-                languages such as Portuguese, Italian, and Japanese.
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Developed a pioneering AI pipeline that autonomously generates
-                daily devotionals from RSS feeds, incorporating cutting-edge,
-                cost-effective technologies and user-centric design.
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Spearheaded a major database migration initiative, enhancing
-                schema and system performance without disrupting service
-                continuity.
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Consistently recognized for leading team efforts that boost
-                productivity and product quality, reflecting my commitment to
-                excellence in software development.
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Successfully led the integration of the Zype CMS, enhancing our
-                video content management capabilities and improving stakeholder
-                experiences.
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Implemented crucial optimizations reducing query response times
-                from over two minutes to under one second, drastically improving
-                operational efficiency.
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Innovated caching strategies and integrated comprehensive
-                monitoring with DataDog, enhancing system reliability and
-                performance.
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Created an Ephemeral/QA environment that reduced our feature
-                delivery cycles and streamlined DevOps processes.
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Worked with technologies like Node.js, JavaScript, TypeScript,
-                React, DynamoDB, Langchain, Golang, Serverless framework, AWS
-                Lambda.
-              </ListItem>
-            </List>
-          </Box>
-        </ListItem>
-
-        <ListItem>
-          <Text fontWeight="bold">
-            <ListIcon as={MdComputer} color="green.400" />
-            Senior Software Engineer (Full-stack Node.js/React/Golang)
-          </Text>
-          <Text fontWeight="bold" color="green.400">
-            April 2022 - December 2022
-          </Text>
-          <Text fontWeight="bold" color={lightColor}>
-            Nok (Los Angeles, California)
-          </Text>
-          <Box color={color}>
-            <List spacing={1}>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Created and supported new features on the e-commerce part,
-                including (payment, shipping, returns, keep orders, and tryout
-                orders). Working as a full stack software engineer I was able to
-                successfully build new features like the multiple order items
-                tryout and keep, including the revamp on the data-side part, and
-                also on the payment processor.
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Proposed scalable solutions to solve data problems related to
-                specific tech debts we had, applying solutions like Cache and
-                Elasticsearch on top of our dynamo databases. Also with the sync
-                mechanism to keep all the index from Elasticsearch up to date
-                with our database schemas.
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Created and optimized the migration process to update records
-                every time we had new properties (columns, tables, indexes) on
-                the database level.
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Worked on technologies like: Node.js, Javascript, Typescript,
-                React, Dynamo, Elasticsearch, AWS Cognito, AWS Amplify with
-                App-sync and AWS Lamdas
-              </ListItem>
-            </List>
-          </Box>
-        </ListItem>
-
-        <ListItem>
-          <Text fontWeight="bold">
-            <ListIcon as={MdComputer} color="green.400" />
-            Senior Software Engineer (Full-stack Node.js/Vue.js)
-          </Text>
-          <Text fontWeight="bold" color="green.400">
-            December 2021 - April 2022
-          </Text>
-          <Text fontWeight="bold" color={lightColor}>
-            Demand.io (Los Angeles, California)
-          </Text>
-          <Box color={color}>
-            <List spacing={1}>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />I have relied on
-                different network affiliatizer to import products, merchants,
-                and promotions. I've built a pipeline to extract, process, and
-                load over 20 million product records into our infrastructure in
-                the product import part. For this solution I created over
-                Node.js platform using queue and technologies like MongoDB with
-                Mongoose, Nest.js, and Bull + Redis for queue management
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />I have also
-                worked on a text clustering strategy for grouping products in
-                order to present the user the best price product, also in order
-                to create solutions to present similar product models for our
-                users into their journey inside our platforms
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Built Nest.js micro-services to communicate with our internal
-                services and expose our best coupons and products for the
-                front-end side on each one for our apps
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Worked close to our infrastructure built in Kubernetes on GCP
-                cloud
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Worked on technologies like: Node.js, Javascript, Typescript,
-                Nest.js, Fastify, MySql, Docker, Kubernetes,
-                [Sentry.io](http://sentry.io/), Elasticsearch, Docker
-              </ListItem>
-            </List>
-          </Box>
-        </ListItem>
-
-        <ListItem>
-          <Text fontWeight="bold">
-            <ListIcon as={MdComputer} color="green.400" />
-            Senior Software Engineer (Full-stack Node.js/React/Vue.js/Golang)
-          </Text>
-          <Text fontWeight="bold" color="green.400">
-            January 2021 - December 2021
-          </Text>
-          <Text fontWeight="bold" color={lightColor}>
-            Insider, Inc. (New York)
-          </Text>
-          <Box color={color}>
-            <List spacing={1}>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />I worked on a big
-                project called page-level revenue attribution (PRA) to
-                understand better which posts were generating more revenue.
-                Based on some dashboards, delivered a better decision-making
-                experience. Yet, to clarify the revenue origin, I built a
-                pipeline to load over 1 million stories/posts and products to
-                enhance our search speed and find a relationship between stories
-                and products faster. This project was built in Node.js using
-                Elasticsearch, Redis, and MongoDB, with frameworks and libraries
-                such as Mongoose, Nest.js, Bull.
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Remote team collaboration
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                SEO optimizations
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Worked inside the Helpfulness team improving the
-                experience/performance for millions of readers
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Internal services using Typescript, Node.js, angular, go
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Worked and developed applications using Docker containers
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Built fully automated CI/CD pipelines with Github actions.
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Implemented several API microservices in Node.js.
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Migrated an existing product platform to start using Vue.js
-                technologies
-              </ListItem>
-            </List>
-          </Box>
-        </ListItem>
-
-        <ListItem>
-          <Text fontWeight="bold">
-            <ListIcon as={MdComputer} color="green.400" />
-            Senior Software Engineer (Back-end Node.js/AWS)
-          </Text>
-          <Text fontWeight="bold" color="green.400">
-            July 2020 - December 2020
-          </Text>
-          <Text fontWeight="bold" color={lightColor}>
-            Kovi (São Paulo, Brazil)
-          </Text>
-          <Box color={color}>
-            <List spacing={1}>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />I worked on a big
-                Design and developed new features on main Kovi's platform.
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Javascript and Typescript on top of Node.js
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Internal services in GraphQL
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                TDD in most task dones (unit and integration)
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                AWS Services with Serverless framework to handle and maintain it
-                (lambda handlers, workers, triggers, dynamodb, sqs, sns)
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Worked and developed applications using Docker containers
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Built fully automated CI/CD pipelines with Github actions.
-              </ListItem>
-            </List>
-          </Box>
-        </ListItem>
-
-        <ListItem>
-          <Text fontWeight="bold">
-            <ListIcon as={MdComputer} color="green.400" />
-            Mid Software Engineer (Full-stack Java and
-            Node.js/React/Angular/Flutter)
-          </Text>
-          <Text fontWeight="bold" color="green.400">
-            July 2019 - June 2020
-          </Text>
-          <Text fontWeight="bold" color={lightColor}>
-            BV Bank (São Paulo, Brazil)
-          </Text>
-          <Box color={color}>
-            <List spacing={1}>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Worked inside Bank's innovation Lab (BV Lab), creating and
-                developing projects to automatizate process and routine
-                integrations with BV's partners. Also worked in a project which
-                the main objective was to improve the user experience of
-                Internet Banking, and helped in the process of migrating the
-                legacy system.
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                In another opportunity I had joined in blockchain project on
-                LIFT (Technological Financial Innovations Laboratory of Brazil
-                Central Bank - https://www.bcb.gov.br/) which we designed and
-                developed a p2p lending blockchain application - using
-                Hyperledger Fabric technology - business case to use with
-                showcase in the LIFT 2019 edition.
-                https://www.bcb.gov.br/en/pressdetail/2308/nota The project name
-                was: P2P LENDING WITH BLOCKCHAIN (bank of issue from Brazil)
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Worked with technologies like Java, Node.js, Angular, React,
-                Flutter.
-              </ListItem>
-            </List>
-          </Box>
-        </ListItem>
-
-        <ListItem>
-          <Text fontWeight="bold">
-            <ListIcon as={MdComputer} color="green.400" />
-            Mid Software Engineer (Full-stack Node.js/React/Angular/AWS)
-          </Text>
-          <Text fontWeight="bold" color="green.400">
-            October 2018 - June 2019
-          </Text>
-          <Text fontWeight="bold" color={lightColor}>
-            Field Control (São José do Rio Preto, Brazil)
-          </Text>
-          <Box color={color}>
-            <List spacing={1}>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Field Control product development and maintenance. Worked on
-                creating new product modules and integration with Bradesco (one
-                of the largest and most respected banks in Brazil). On a
-                day-to-day basis, use the following scope technologies:
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Front-end: React.js, React native, Angular.
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Migration, synchronization, and database cleanup scripts with
-                Node.js
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                AWS web services usage: Cognito, SQS, SNS, Lambdas, RDS,
-                Serverless framework, DynamoDB
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Worked and lead on a project with an integration with one of the
-                biggest banks on Brazil (Bradesco), where we had to consume
-                their API with some locations to process and load into our
-                database. Built from top to bottom all the tech resources for
-                making the integration possible (mobile application, server, ETL
-                data pipeline process to process)
-              </ListItem>
-            </List>
-          </Box>
-        </ListItem>
-
-        <ListItem>
-          <Text fontWeight="bold">
-            <ListIcon as={MdComputer} color="green.400" />
-            Jr. Software Engineer (Full-stack Java Spring/JSF/JSP/Node.js)
-          </Text>
-          <Text fontWeight="bold" color="green.400">
-            January 2018 - December 2018
-          </Text>
-          <Text fontWeight="bold" color="gray.200">
-            DXC (São José do Rio Preto, Brazil)
-          </Text>
-          <Box color={color}>
-            <List spacing={1}>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Worked on development of enterprise web projects in Petrobras
-                (http://www.petrobras.com.br/pt/), using technologies like Java
-                EE, SpringMVC, JPA and JSF.
-              </ListItem>
-            </List>
-          </Box>
-        </ListItem>
-
-        <ListItem>
-          <Text fontWeight="bold">
-            <ListIcon as={MdComputer} color="green.400" />
-            Software Engineer (Full-stack Java Spring/JSP/Node.js/Front-end)
-          </Text>
-          <Text fontWeight="bold" color="green.400">
-            January 2014 - December 2017
-          </Text>
-          <Text fontWeight="bold" color="gray.200">
-            UNESP - GBD (São José do Rio Preto, Brazil)
-          </Text>
-          <Box color={color}>
-            <List spacing={1}>
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Project Portal GBD - Concept, develop and maintain a platform to
-                show information about Database Group. I worked with Java7,
-                Spring MVC, Hibernate/JPA, PostgreSQL, JSP, HTML, CSS,
-                JavaScript, jQuery, and Bootstrap.
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Project Portal GBD Lattes - Concept, develop and maintain a
-                platform to show information of Unesp's scientific production,
-                which are collected from the Lattes Platformwith some
-                enhancements when compared to Portal PROPe. I worked with Java7,
-                Spring MVC, Hibernate/JPA, PostgreSQL, JSP, HTML, CSS,
-                JavaScript, jQuery, and Bootstrap.
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Project Portal PROPe - Develop and maintain a platform to show
-                information of Unesp's scientific production, which are
-                collected from the Lattes Platform. I worked with Java7, Spring
-                MVC, Hibernate/JPA, PostgreSQL, JSP, HTML, CSS, JavaScript,
-                jQuery, and Bootstrap.
-              </ListItem>
-
-              <ListItem>
-                <ListIcon as={MdArrowRight} color="gray.500" />
-                Project GEP - Develop and maintain a medical record evaluation
-                for patients on Bezerra de Menezes Hospital. I worked with
-                Java7, Spring MVC, Hibernate/JPA, PostgreSQL, JSP, HTML, CSS,
-                JavaScript, jQuery, and Bootstrap.
-              </ListItem>
-            </List>
-          </Box>
-        </ListItem>
+      <List spacing={0} position="relative" pl={4}>
+        {experienceItems.map((item) => (
+          <ExperienceItem
+            key={item.id}
+            title={item.title}
+            period={item.period}
+            company={item.company}
+            achievements={item.achievements}
+            about={item.about}
+          />
+        ))}
       </List>
     </Stack>
   );
 };
+
+ExperiencesComponent.displayName = "ExperiencesComponent";
+
+// Use dynamic import with SSR disabled to avoid hydration issues
+const Experiences = dynamic(() => Promise.resolve(ExperiencesComponent), {
+  ssr: false,
+});
 
 export default Experiences;

@@ -1,13 +1,14 @@
 import {
   Box,
   Flex,
-  Text,
   Icon,
+  Text,
   useBreakpointValue,
   useColorModeValue,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import { FunctionComponent } from "react";
-import { RiGithubFill, RiMailLine, RiPhoneLine, RiLink } from "react-icons/ri";
+import { RiGithubFill, RiLink, RiMailLine, RiPhoneLine } from "react-icons/ri";
 
 interface SocialMediasProps {}
 
@@ -43,7 +44,7 @@ const SocialMedias: FunctionComponent<SocialMediasProps> = () => {
       <Box display={"flex"} mr="2">
         <Icon as={RiGithubFill} fontSize="17" color="green.400" mr="2" />
         <Text fontSize={["small"]} color={color}>
-          tupizz
+          <Link href="https://github.com/tupizz">tupizz</Link>
         </Text>
       </Box>
 

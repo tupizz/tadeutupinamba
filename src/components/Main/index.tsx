@@ -10,8 +10,8 @@ const Main: FunctionComponent<MainProps> = () => {
   return (
     <Stack spacing={8}>
       <Summary />
-      <Education />
       <Experiences />
+      <Education />
       <div style={{ height: "50px" }} />
     </Stack>
   );
