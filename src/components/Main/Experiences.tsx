@@ -6,10 +6,49 @@ import {
   ListItem,
   Stack,
   Text,
+  Tooltip,
   useColorModeValue,
+  Wrap,
+  WrapItem,
 } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import { FunctionComponent } from "react";
+import { IconType } from "react-icons";
+import { FaBuilding } from "react-icons/fa";
+import {
+  SiAmazon,
+  SiAmazonaws,
+  SiAmazondynamodb,
+  SiAngular,
+  SiApachekafka,
+  SiCss3,
+  SiDatabricks,
+  SiDatadog,
+  SiDocker,
+  SiElasticsearch,
+  SiFacebook,
+  SiFastify,
+  SiFlutter,
+  SiGithubactions,
+  SiGo,
+  SiGoogle,
+  SiGooglecloud,
+  SiHtml5,
+  SiJava,
+  SiJavascript,
+  SiKubernetes,
+  SiLinkedin,
+  SiMongodb,
+  SiMysql,
+  SiNestjs,
+  SiNodedotjs,
+  SiPostgresql,
+  SiReact,
+  SiRedis,
+  SiSpring,
+  SiTypescript,
+  SiVuedotjs,
+} from "react-icons/si";
 
 interface ExperiencesProps {}
 
@@ -28,6 +67,22 @@ const experienceItems = [
       "Performance Optimization: Redesigned the connection integration framework, achieving a 70% efficiency improvement that dramatically reduced latency and enhanced real-time audience delivery across all advertising platforms.",
       "Operational Intelligence System: Architected and deployed an internal monitoring portal visualizing live events and queue statuses across microservices, increasing system transparency, accelerating issue resolution, and strengthening cross-functional collaboration throughout the organization.",
     ],
+    techStack: [
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "Golang", icon: SiGo },
+      { name: "React", icon: SiReact },
+      { name: "ClickHouse", icon: SiDatabricks },
+      { name: "Google Ads API", icon: SiGoogle },
+      { name: "Meta Ads API", icon: SiFacebook },
+      { name: "LinkedIn Ads API", icon: SiLinkedin },
+      { name: "Redis", icon: SiRedis },
+      { name: "DynamoDB", icon: SiAmazondynamodb },
+      { name: "Docker", icon: SiDocker },
+      { name: "Kubernetes", icon: SiKubernetes },
+      { name: "Amazon AWS", icon: SiAmazonaws },
+    ],
   },
   {
     id: "pray",
@@ -44,6 +99,20 @@ const experienceItems = [
       "Performance Optimization: Implemented critical system optimizations that reduced query response times from over two minutes to under one second, dramatically improving user experience and operational efficiency.",
       "DevOps Infrastructure Innovation: Created an Ephemeral/QA environment that accelerated feature delivery cycles and streamlined development processes, while implementing advanced caching strategies and comprehensive DataDog monitoring to enhance system reliability.",
     ],
+    techStack: [
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "Golang", icon: SiGo },
+      { name: "MySQL", icon: SiMysql },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "React", icon: SiReact },
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "DataDog", icon: SiDatadog },
+      { name: "Amazon AWS", icon: SiAmazonaws },
+      { name: "Redis", icon: SiRedis },
+      { name: "Elasticsearch", icon: SiElasticsearch },
+      { name: "DynamoDB", icon: SiAmazondynamodb },
+      { name: "Docker", icon: SiDocker },
+    ],
   },
   {
     id: "nok",
@@ -59,6 +128,16 @@ const experienceItems = [
       "Database Migration Framework: Created and optimized an efficient migration process to seamlessly update records whenever new properties were introduced at the database level, minimizing downtime and ensuring data consistency during schema evolutions.",
       "Full-Stack Technical Expertise: Leveraged diverse technology stack including Node.js, JavaScript, TypeScript, React, DynamoDB, Elasticsearch, AWS Cognito, AWS Amplify with AppSync, and AWS Lambda to build and maintain scalable, high-performance applications supporting the company's reverse logistics operations.",
     ],
+    techStack: [
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "Golang", icon: SiGo },
+      { name: "React", icon: SiReact },
+      { name: "DynamoDB", icon: SiAmazondynamodb },
+      { name: "Elasticsearch", icon: SiElasticsearch },
+      { name: "AWS Lambda", icon: SiAmazon },
+      { name: "Amazon AWS", icon: SiAmazonaws },
+    ],
   },
   {
     id: "demand",
@@ -73,6 +152,19 @@ const experienceItems = [
       "Microservices Architecture Development: Built robust Nest.js microservices that facilitated seamless communication between internal services and exposed optimized coupon and product data to front-end applications, creating a cohesive ecosystem across the platform.",
       "Cloud Infrastructure Collaboration: Worked closely with infrastructure teams on Kubernetes-based systems deployed on Google Cloud Platform, ensuring scalability, reliability, and performance optimization for all services.",
       "Full-Stack Technical Implementation: Leveraged diverse technology stack including Node.js, JavaScript, TypeScript, Nest.js, Fastify, MySQL, Docker, Kubernetes, Sentry.io, Elasticsearch, and containerization technologies to deliver high-performance, scalable solutions supporting the company's AI-driven commerce platform.",
+    ],
+    techStack: [
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "NestJS", icon: SiNestjs },
+      { name: "Fastify", icon: SiFastify },
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "Redis", icon: SiRedis },
+      { name: "MySQL", icon: SiMysql },
+      { name: "Docker", icon: SiDocker },
+      { name: "Kubernetes", icon: SiKubernetes },
+      { name: "Google Cloud", icon: SiGooglecloud },
+      { name: "Elasticsearch", icon: SiElasticsearch },
     ],
   },
   {
@@ -91,6 +183,19 @@ const experienceItems = [
       "API Architecture: Developed multiple high-performance APIs and applications in Node.js that supported critical business functions, enhancing content delivery capabilities and internal data accessibility.",
       "SEO Enhancement: Implemented technical SEO optimizations that improved content discoverability and search engine rankings, contributing to increased organic traffic and broader audience reach.",
     ],
+    techStack: [
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "Angular", icon: SiAngular },
+      { name: "Vue.js", icon: SiVuedotjs },
+      { name: "Go", icon: SiGo },
+      { name: "NestJS", icon: SiNestjs },
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "Redis", icon: SiRedis },
+      { name: "Elasticsearch", icon: SiElasticsearch },
+      { name: "Docker", icon: SiDocker },
+      { name: "GitHub Actions", icon: SiGithubactions },
+    ],
   },
   {
     id: "bv",
@@ -105,6 +210,14 @@ const experienceItems = [
       "Blockchain Innovation: Participated in a prestigious blockchain project under LIFT (Technological Financial Innovations Laboratory of Brazil Central Bank), where I helped design and develop a P2P lending application using Hyperledger Fabric technology, which was showcased in the LIFT 2019 edition and recognized by Brazil's Central Bank.",
       "Augmented Reality Implementation: Leveraged AR.js and Unity with Vuforia to create augmented reality projects that provided innovative customer experiences and differentiated banking services in the competitive financial technology landscape.",
       "Cross-Platform Development: Built and maintained diverse applications using multiple technologies including Java with Spring Boot for APIs, Node.js for backend services, Angular and React for web applications, and Flutter for mobile applications, demonstrating versatility across the full technology stack.",
+    ],
+    techStack: [
+      { name: "Java", icon: SiJava },
+      { name: "Spring Boot", icon: SiSpring },
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "Angular", icon: SiAngular },
+      { name: "React", icon: SiReact },
+      { name: "Flutter", icon: SiFlutter },
     ],
   },
   {
@@ -123,6 +236,14 @@ const experienceItems = [
       "Serverless Implementation: Leveraged AWS Lambda for API exposure, optimizing resource utilization and improving scalability while reducing operational overhead.",
       "Authentication Security: Implemented Amazon Cognito for user authentication across multiple projects, enhancing security protocols and streamlining user management within the platform.",
     ],
+    techStack: [
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "Angular", icon: SiAngular },
+      { name: "React", icon: SiReact },
+      { name: "AWS Lambda", icon: SiAmazon },
+      { name: "Amazon AWS", icon: SiAmazonaws },
+    ],
   },
   {
     id: "cnpq",
@@ -137,6 +258,12 @@ const experienceItems = [
       "Distributed Processing Implementation: Leveraged Hadoop and Hadoop Image Processing Interface to create efficient methods for processing massive image datasets, enabling more effective extraction of critical environmental information from remote sensing data.",
       "Environmental Monitoring Solutions: Created technical solutions for monitoring vital natural resources including water bodies, mineral deposits, and green areas through advanced image processing algorithms.",
       "Research Infrastructure Development: Established programming classes and methods specifically optimized for the distributed processing of large-scale image datasets, contributing to the technological capabilities of Brazil's scientific research community.",
+    ],
+    techStack: [
+      { name: "Java", icon: SiJava },
+      { name: "Hadoop", icon: SiApachekafka },
+      { name: "Amazon AWS", icon: SiAmazonaws },
+      { name: "DynamoDB", icon: SiAmazondynamodb },
     ],
   },
   {
@@ -153,8 +280,55 @@ const experienceItems = [
       "Developed large-scale image-processing pipelines with the Hadoop Image Processing Interface (HIPI), enabling high-throughput analysis of extensive biomedical and educational image datasets.",
       "Deployed and managed Hadoop clusters on Amazon Web Services, ensuring scalable, reliable infrastructure for big-data workflows and batch processing.",
     ],
+    techStack: [
+      { name: "Java", icon: SiJava },
+      { name: "Spring MVC", icon: SiSpring },
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "HTML5", icon: SiHtml5 },
+      { name: "CSS3", icon: SiCss3 },
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "Amazon AWS", icon: SiAmazonaws },
+      { name: "Hadoop", icon: SiApachekafka },
+    ],
   },
 ];
+
+// Tech Icon component
+const TechIcon: FunctionComponent<{
+  icon: IconType;
+  name: string;
+}> = ({ icon: Icon, name }) => {
+  const bgColor = useColorModeValue("gray.100", "gray.700");
+  const hoverBgColor = useColorModeValue("green.100", "green.800");
+  const borderColor = useColorModeValue("green.200", "green.700");
+  const textColor = useColorModeValue("gray.700", "gray.200");
+
+  return (
+    <Tooltip label={name} placement="top" hasArrow>
+      <WrapItem>
+        <Box
+          p={1.5}
+          borderRadius="md"
+          bg={bgColor}
+          color={textColor}
+          boxShadow="sm"
+          border="1px solid"
+          borderColor={borderColor}
+          _hover={{
+            bg: hoverBgColor,
+            transform: "translateY(-2px)",
+            boxShadow: "md",
+          }}
+          transition="all 0.2s"
+        >
+          <Icon size={24} />
+        </Box>
+      </WrapItem>
+    </Tooltip>
+  );
+};
+
+TechIcon.displayName = "TechIcon";
 
 const ExperienceItem: FunctionComponent<{
   title: string;
@@ -162,11 +336,25 @@ const ExperienceItem: FunctionComponent<{
   company: string;
   achievements: string[];
   about?: string;
-}> = ({ title, period, company, achievements, about }) => {
+  techStack?: { name: string; icon: IconType }[];
+}> = ({ title, period, company, achievements, about, techStack }) => {
   const color = useColorModeValue("gray.600", "gray.300");
-  const lightColor = useColorModeValue("gray.500", "gray.400");
+  const lightColor = useColorModeValue("gray.500", "gray.200");
   const aboutBgColor = useColorModeValue("gray.50", "gray.800");
   const borderColor = useColorModeValue("gray.200", "gray.700");
+  const companyBgColor = useColorModeValue("green.50", "green.900");
+  const companyBorderColor = useColorModeValue("green.100", "green.800");
+  const achievementHoverBg = useColorModeValue("gray.50", "gray.800");
+  const iconColor = useColorModeValue("#38A169", "#9AE6B4");
+  const yearMarkerBg = useColorModeValue("white", "gray.900");
+
+  // Extract company name and location
+  const companyParts = company.match(/(.*?)\s*\((.*?)\)$/);
+  const companyName = companyParts ? companyParts[1] : company;
+  const companyLocation = companyParts ? companyParts[2] : null;
+
+  // Extract year from period (e.g., "January 2025 - present" => "2025")
+  const startYear = period.match(/\b(20\d{2})\b/)?.[0];
 
   return (
     <ListItem mb={10} position="relative">
@@ -201,9 +389,62 @@ const ExperienceItem: FunctionComponent<{
           {period}
         </Text>
 
-        <Text color={lightColor} fontSize="sm" mb={3}>
-          {company}
-        </Text>
+        <Box
+          display="inline-flex"
+          alignItems="center"
+          bg={companyBgColor}
+          px={3}
+          py={1}
+          borderRadius="md"
+          mb={3}
+          _hover={{
+            bg: useColorModeValue("green.100", "green.800"),
+            transform: "translateY(-1px)",
+            boxShadow: "sm",
+          }}
+          transition="all 0.2s"
+          cursor="default"
+        >
+          <FaBuilding
+            style={{
+              marginRight: "6px",
+              opacity: 0.8,
+              color: iconColor,
+            }}
+          />
+          <Text
+            fontWeight="500"
+            fontSize="sm"
+            color={useColorModeValue("gray.700", "gray.100")}
+          >
+            {companyName}
+          </Text>
+          {companyLocation && (
+            <Text fontSize="xs" ml={1} color={lightColor}>
+              • {companyLocation}
+            </Text>
+          )}
+        </Box>
+
+        {/* Tech Stack */}
+        {techStack && techStack.length > 0 && (
+          <Box mb={4}>
+            <Text
+              fontSize="xs"
+              fontWeight="500"
+              textTransform="uppercase"
+              color="green.500"
+              mb={2}
+            >
+              Technologies
+            </Text>
+            <Wrap spacing={2}>
+              {techStack.map((tech, idx) => (
+                <TechIcon key={idx} icon={tech.icon} name={tech.name} />
+              ))}
+            </Wrap>
+          </Box>
+        )}
 
         {about && (
           <Text
@@ -221,16 +462,37 @@ const ExperienceItem: FunctionComponent<{
         )}
 
         <Box mt={4}>
-          <List spacing={2}>
+          <Text
+            fontSize="xs"
+            fontWeight="500"
+            textTransform="uppercase"
+            color="green.500"
+            mb={2}
+          >
+            Key Achievements
+          </Text>
+          <List spacing={3}>
             {achievements.map((achievement, idx) => (
               <ListItem
                 key={idx}
                 display="flex"
                 fontSize="sm"
                 color={color}
-                lineHeight="tall"
+                borderRadius="md"
+                p={1}
+                _hover={{
+                  bg: achievementHoverBg,
+                  transform: "translateX(2px)",
+                }}
+                transition="all 0.2s"
               >
-                <Text as="span" color="green.400" mr={2} fontSize="sm">
+                <Text
+                  as="span"
+                  color="green.400"
+                  mr={2}
+                  fontSize="sm"
+                  fontWeight="bold"
+                >
                   •
                 </Text>
                 <Text>{achievement}</Text>
@@ -261,6 +523,7 @@ const ExperiencesComponent: FunctionComponent<ExperiencesProps> = () => {
             company={item.company}
             achievements={item.achievements}
             about={item.about}
+            techStack={item.techStack}
           />
         ))}
       </List>

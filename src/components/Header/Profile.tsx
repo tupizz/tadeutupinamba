@@ -21,10 +21,10 @@ const Profile: FunctionComponent<ProfileProps> = () => {
           Tadeu Tupinambá
         </Text>
         <Text fontSize={["small", "small", "medium"]}>
-          Full stack Javascript Developer (Node.js, React, Database)
+          Software Craftsman with over 10+ years of experience
         </Text>
         <Text color="gray.300" fontSize={["small", "small", "medium"]}>
-          Specialist on Node.js Software engineer
+          Full stack Developer (Node.js, Golang, React, SQL & NoSQL Databases)
         </Text>
       </Box>
     </Flex>
