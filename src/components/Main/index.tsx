@@ -1,4 +1,4 @@
-import { Stack } from "@chakra-ui/react";
+import { Box, Stack } from "@chakra-ui/react";
 import { FunctionComponent } from "react";
 import Education from "./Education";
 import Experiences from "./Experiences";
@@ -8,12 +8,14 @@ interface MainProps {}
 
 const Main: FunctionComponent<MainProps> = () => {
   return (
-    <Stack spacing={8}>
-      <Summary />
-      <Experiences />
-      <Education />
-      <div style={{ height: "50px" }} />
-    </Stack>
+    <Box maxW="100%" overflow="hidden">
+      <Stack spacing={16} my={4}>
+        <Summary />
+        <Experiences />
+        <Education />
+        <Box height="50px" />
+      </Stack>
+    </Box>
   );
 };
 

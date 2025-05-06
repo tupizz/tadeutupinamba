@@ -509,24 +509,26 @@ ExperienceItem.displayName = "ExperienceItem";
 
 const ExperiencesComponent: FunctionComponent<ExperiencesProps> = () => {
   return (
-    <Stack spacing={8}>
-      <Heading as="h2" size="lg" letterSpacing="tight">
+    <Stack spacing={0}>
+      <Heading as="h2" variant="section" mb={6}>
         Experiences
       </Heading>
-      <Divider />
-      <List spacing={0} position="relative" pl={4}>
-        {experienceItems.map((item) => (
-          <ExperienceItem
-            key={item.id}
-            title={item.title}
-            period={item.period}
-            company={item.company}
-            achievements={item.achievements}
-            about={item.about}
-            techStack={item.techStack}
-          />
-        ))}
-      </List>
+      
+      <Box pt={2}>
+        <List spacing={0} position="relative" pl={4}>
+          {experienceItems.map((item) => (
+            <ExperienceItem
+              key={item.id}
+              title={item.title}
+              period={item.period}
+              company={item.company}
+              achievements={item.achievements}
+              about={item.about}
+              techStack={item.techStack}
+            />
+          ))}
+        </List>
+      </Box>
     </Stack>
   );
 };
